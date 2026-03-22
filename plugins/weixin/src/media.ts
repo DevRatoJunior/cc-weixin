@@ -129,7 +129,7 @@ export async function uploadFile(params: {
   const uploadResult = await fetch(uploadUrl, {
     method: "POST",
     headers: { "Content-Type": "application/octet-stream" },
-    body: ciphertext,
+    body: new Uint8Array(ciphertext),
   });
 
   if (!uploadResult.ok) {

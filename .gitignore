@@ -1,7 +1,27 @@
+# Dependencies
 node_modules/
+
+# Build output
 dist/
 *.tgz
+
+# Environment & secrets
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test coverage
+coverage/
+
+# Claude Code local settings & memory
 .claude/settings.local.json
+.claude/memory/
 
 # Upstream reference (not part of this project)
 openclaw-weixin/
