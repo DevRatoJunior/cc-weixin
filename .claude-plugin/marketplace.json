@@ -1,8 +1,10 @@
 {
   "name": "cc-weixin",
-  "description": "WeChat channel plugin for Claude Code via official iLink Bot API",
   "owner": {
     "name": "qufei1993"
+  },
+  "metadata": {
+    "description": "WeChat channel plugin for Claude Code via official iLink Bot API"
   },
   "plugins": [
     {
