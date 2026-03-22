@@ -60,13 +60,13 @@ cd cc-weixin
 
 ### 2. 启动 Claude Code 并启用微信 channel
 
-```bash
-# 通过已安装插件启动
-claude --channels plugin:weixin@cc-weixin
+`/weixin:configure` 连接成功后会自动注册 MCP 到 `~/.claude/.mcp.json`，之后在任意目录启动：
 
-# 或本地开发模式
+```bash
 claude --dangerously-load-development-channels server:weixin
 ```
+
+> **注意**：`--channels plugin:weixin@cc-weixin` 需要官方 allowlist 批准，目前尚未开放，请使用上述方式启动。
 
 ### 3. 配对微信用户
 
