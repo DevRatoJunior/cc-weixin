@@ -29,6 +29,9 @@
 - [Bun](https://bun.sh) 运行时
 - [Claude Code](https://claude.ai/code)（需支持 channel 功能）
 - 微信账号
+  - iOS：微信 8.0.70 或更高版本，路径：**我 → 设置 → 插件 → ClawBot（如果支持了，能看到这个插件）**
+  - Android：暂未支持，等微信官方支持
+  - 该插件目前仍在灰度测试阶段，部分用户可能暂时无法开通
 
 ## 安装
 
