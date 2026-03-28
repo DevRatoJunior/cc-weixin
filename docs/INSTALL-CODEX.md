@@ -58,7 +58,7 @@ git clone https://github.com/qufei1993/cc-weixin.git ~/cc-weixin
 }
 ```
 
-> `path` 相对于 `~`（home 目录）。如果 clone 到了其他位置，对应修改。
+> `path` 必须以 `./` 开头（相对于 `~` 即 home 目录），**不能使用绝对路径**（Codex 会报错拒绝加载）。如果 clone 到了其他位置，对应修改 `./` 后面的部分。
 
 ### 第三步：在 Codex 中安装插件
 
