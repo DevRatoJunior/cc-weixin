@@ -26,6 +26,9 @@ for i in $(seq 1 20); do
   fi
 done
 
+echo "[weixin] Installing dependencies..."
+(cd "$SCRIPT_DIR" && bun install --no-summary)
+
 echo "[weixin] Starting Weixin bridge..."
 CODEX_WS_URL="$WS_URL" bun "$SCRIPT_DIR/server-codex.ts"
 
