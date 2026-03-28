@@ -11,10 +11,8 @@
 | 终端显示微信对话 | ✅ 消息直接出现在会话中 | ❌ TUI 不渲染外部注入的 turn | [#15320](https://github.com/openai/codex/issues/15320) |
 | MCP 通知推送到会话 | ✅ `notifications/claude/channel` | ❌ 无等效机制 | [#15299](https://github.com/openai/codex/issues/15299) |
 | 社区插件远程安装 | ✅ marketplace URL 一键安装 | ❌ 仅支持本地路径 | 官方社区市场尚未开放 |
-| MCP Resource Subscribe | ✅ | ❌ 未实现 | [#4956](https://github.com/openai/codex/issues/4956) |
-| MCP Sampling | ✅ | ❌ 未实现 | [#4929](https://github.com/openai/codex/issues/4929) |
 
-**最关键的两个**：#15320（TUI 显示对话）和 #15299（MCP 通知路由），任意一个解决后，用户即可在 Codex 终端中直接看到微信对话，体验将与 Claude Code 基本一致。
+上面三个中，**#15320 和 #15299 任意一个解决后**，用户即可在 Codex 终端中直接看到微信对话并参与交互，体验将与 Claude Code 基本一致。
 
 ## 已知限制
 
