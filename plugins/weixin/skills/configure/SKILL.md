@@ -25,6 +25,13 @@ cd "${CLAUDE_PLUGIN_ROOT:-$(dirname $(dirname $0))}" && bun install --no-summary
 
 The script handles everything: checking existing accounts, displaying the QR code, polling for scan result, and saving credentials.
 
+**IMPORTANT — QR Code display**: The script outputs a line like:
+```
+Scan the QR code above with WeChat, or open this URL:
+https://....
+```
+Always extract and show this URL to the user explicitly. In environments where the terminal QR code is not visible (e.g. Codex TUI background terminal), this URL is the only way for the user to scan. Tell the user to open the URL in a browser and scan the QR code with WeChat.
+
 After connecting, tell the user the next step based on their platform:
 
 **Claude Code:**
